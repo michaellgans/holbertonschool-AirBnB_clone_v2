@@ -7,19 +7,19 @@ app = Flask(__name__)
 
 @app.route("/", strict_slashes=False)
 def index():
-    """ Displays string when connection is created """
+    """ Displays a greeting. """
     return "Hello HBNB!"
 
 
 @app.route("/hbnb", strict_slashes=False)
 def index1():
-    """ Displays string when connection is created """
+    """ Displays HBNB. """
     return "HBNB"
 
 
 @app.route("/c/<text>", strict_slashes=False)
 def index2(text):
-    """ Displays string when connection is created """
+    """ Displays C and then specific text from the user. """
     text = text.replace("_", " ")
     return "C {}".format(text)
 
@@ -27,7 +27,7 @@ def index2(text):
 @app.route("/python", strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def index3(text="is cool"):
-    """ Displays string when connection is created """
+    """ Displays Python and then is cool as default """
     text = text.replace("_", " ")
     return "Python {}".format(text)
 
