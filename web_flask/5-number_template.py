@@ -40,8 +40,8 @@ def index4(n):
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def index5(n):
-    """ Uses a route parameter with a converter """
-    return "<html><body><h1>Number: {}</h1></body></html>".format(n)
+    """ Displays an html file and dynamically inserts values """
+    return render_template("5-number.html", n=n)
 
 
 if __name__ == "__main__":
