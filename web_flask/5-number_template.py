@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Flask document for task 5 """
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
