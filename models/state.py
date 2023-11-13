@@ -24,6 +24,6 @@ class State(BaseModel, Base):
         current_list = storage.all()
         for item in current_list:
             object = current_list[item].to_dict()
-            if object["__class__"] = "City" and object["state_id"] = self.id:
+            if object["__class__"] == "City" and object["state_id"] == self.id:
                 new_list.append(current_list[item])
         return new_list
