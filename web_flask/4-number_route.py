@@ -33,7 +33,7 @@ def index3(text="is cool"):
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
-def index3(n):
+def index4(n):
     """ Using a route parameter with a converter """
     return "{} is a number".format(n)
 
