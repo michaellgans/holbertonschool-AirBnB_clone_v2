@@ -21,7 +21,9 @@ class State(BaseModel, Base):
     @property
     def cities(self):
         new_list = []
-        a = storage.all()
-        for objects in a:
-            x = type(a[objects])
-        return x
+        current_list = storage.all()
+        for item in current_list:
+            object = current_list[item].to_dict()
+            if object["__class__"] = "City" and object["state_id"] = self.id:
+                new_list.append(current_list[item])
+        return new_list
