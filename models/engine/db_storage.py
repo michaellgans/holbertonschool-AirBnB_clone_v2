@@ -80,8 +80,4 @@ class DBStorage:
         session_factory = sessionmaker(bind=self.__engine,
                                        expire_on_commit=False)
         Session = scoped_session(session_factory)
-
-        if self._session:
-            self.__session.close()
-
         self.__session = Session()
