@@ -34,10 +34,8 @@ def index3(text="is cool"):
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def index3(n):
-    """
-    Using a route parameter with a converter 
-    Returns 404 Error if it's not an int
-    """
+    """Using a route parameter with a converter 
+    Returns 404 Error if it's not an int"""
     return "{} is a number".format(n)
 
 
