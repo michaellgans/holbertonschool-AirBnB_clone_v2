@@ -7,19 +7,19 @@ app = Flask(__name__)
 
 @app.route("/", strict_slashes=False)
 def index():
-    """ Displays a greeting. """
+    """ Displays a greeting """
     return "Hello HBNB!"
 
 
 @app.route("/hbnb", strict_slashes=False)
 def index1():
-    """ Displays HBNB. """
+    """ Displays HBNB """
     return "HBNB"
 
 
 @app.route("/c/<text>", strict_slashes=False)
 def index2(text):
-    """ Displays C and then specific text from the user. """
+    """ Displays C and then specific text from the user """
     text = text.replace("_", " ")
     return "C {}".format(text)
 
