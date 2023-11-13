@@ -70,7 +70,7 @@ class FileStorage:
                 self.__objects.pop(key)
         else:  # if not, do nothing
             pass
-    
+
     def close(self):
         """ Deserialize JSON file """
         self.reload()
