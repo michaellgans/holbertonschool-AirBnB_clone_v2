@@ -22,7 +22,7 @@ def states(id=None):
 
     if id is None:
         states_list = list(all_states.values())
-        return render_template("7-states_list", states=states_list)
+        return render_template("7-states_list.html", states=states_list)
     else:
         for state in all_states.values():
             if state.id == id:
