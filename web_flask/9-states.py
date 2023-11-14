@@ -7,12 +7,13 @@ from models import storage
 app = Flask(__name__)
 app.debug = False
 
+
 @app.teardown_appcontext
 def teardown(exception):
     storage.close()
 
 
-@app.route("/states", strict_slashes = False)
+@app.route("/states", strict_slashes=False)
 @app.route("/states/<id>", strict_slashes=False)
 def states(id=None):
     from models.state import State
@@ -27,8 +28,6 @@ def states(id=None):
         for state in all_states.values():
             if state.id == id:
                 return render_template("9-states.html", state=state)
-
-        return render_template("9-states.html", not_found=True)
 
 
 if __name__ == "__main__":
