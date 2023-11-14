@@ -14,8 +14,16 @@ def teardown(exception):
 
 @app.route("/states_list", strict_slashes=False)
 def states_list():
-    states = storage.all("State")
-    return render_template("7-states_list.html", states=states.values())
+    from models.state import State
+
+    storage.reload()
+    all_states = storage.all(State)
+
+    states_list = []
+
+    for state in all_states:
+        states_list.append(all_states[state])
+    return render_template("7-states_list.html", states=states_list)
 
 
 if __name__ == "__main__":
