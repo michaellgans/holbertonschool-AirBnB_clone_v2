@@ -4,6 +4,8 @@
         <title>HBNB</title>
     </head>
     <body>
+        {% if not_found %}
+            <h1>State not found!</h1>
         <h1>State: {{ state.name }}</h1>
         <h3>Cities:</h3>
             <ul>

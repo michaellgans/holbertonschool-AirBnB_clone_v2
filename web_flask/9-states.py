@@ -5,7 +5,7 @@ from flask import Flask, render_template
 from models import storage
 
 app = Flask(__name__)
-
+app.debug = False
 
 @app.teardown_appcontext
 def teardown(exception):
@@ -20,18 +20,15 @@ def states(id=None):
     storage.reload()
     all_states = storage.all(State)
 
-    if id == None:
-        states_list = []
-        for state in all_states:
-            states_list.append(all_states[state])
+    if id is None:
+        states_list = list(all_states.values())
         return render_template("7-states_list", states=states_list)
     else:
-        for state in all_states:
-            if all_states[state].id == id:
-                obj = all_states[state]
-                return render_template("9-states.html", id=id, state=obj)
-            else:
-                return render_template("9-states.html", not_found=True)
+        for state in all_states.values():
+            if state.id == id:
+                return render_template("9-states.html", state=state)
+
+        return render_template("9-states.html", not_found=True)
 
 
 if __name__ == "__main__":
